@@ -1,7 +1,7 @@
 import express from "express";
-import Sequelize from "sequelize";
 import db from "./config/db.js";
 import routes from "./routes/index.js";
+import cors from "cors";
 
 db.connect(function(err) {
     if (err) throw err;
@@ -9,6 +9,8 @@ db.connect(function(err) {
 });
 
 const app = express();
+
+app.use(cors({ origin: 'http://localhost:8080' }))
 
 app.use(express.json())
 
