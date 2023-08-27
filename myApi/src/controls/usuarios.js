@@ -7,7 +7,7 @@ class UsuarioControl{
         usuario.listarUsuarios()
             .then(result => {
                 console.log(result)
-//                res.setHeader('Access-Control-Allow-Origin','http://localhost:8080')
+                res.setHeader('Access-Control-Allow-Origin','http://localhost:8081')
                 res.status(200).json(result)
             })
             .catch(err => {
